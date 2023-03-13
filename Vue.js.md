@@ -5745,6 +5745,13 @@ new Vue({
 
 #### App.vue
 
+> **Bootstrap**网格布局，一共有12列
+>
+> - col-xs-offset-2：在左侧偏移2列
+> - class="row"  独占一行，row下面有子div就一起划分这一行，即子div们都在同一行！
+>
+> - class="col-xs-6"：元素共占6列
+
 ```vue
 <template>
   <div>
@@ -5764,16 +5771,16 @@ new Vue({
            <router-link class="list-group-item" active-class="active" to="/about">About</router-link>
           <router-link class="list-group-item" active-class="active" to="/home">Home</router-link>
         </div>
-      </div>
-      <div class="col-xs-6">
+       </div>
+       <div class="col-xs-6">
         <div class="panel">
           <div class="panel-body">
 			<!-- 指定组件的呈现位置 -->
             <router-view></router-view>
           </div>
         </div>
-      </div>
-    </div>
+       </div>
+    </div><!-- row -->
   </div>
 </template>
 
@@ -5800,11 +5807,21 @@ Home.Vue
 </script>
 ```
 
+**结果如下**：
+
+---
+
+<img src="https://img-blog.csdnimg.cn/20210528200034331.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzUwNzg5MjAx,size_16,color_FFFFFF,t_70" alt="img" style="zoom:67%;" />
+
+---
+
+
+
 
 
 ### 路由进一步了解
 
-1. 我们的要引入到App.vue的组件为一般组件，**一般组件**写在components组件目录下，**路由组件写在pages目录下**。
+1. 我们要引入到App.vue的组件为一般组件，**一般组件**写在components组件目录下，**路由组件写在pages目录下**。
 2. 路由的组件，当不展示那个组件时候，那个**路由的组件vc会被销毁**
 3. 每个路由组件都有**自己独有的$route**，但是他们**同属一个router**，router用$router属性拿到
 
